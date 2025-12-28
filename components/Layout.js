@@ -14,11 +14,13 @@ export default function Layout({ children }) {
     if (hamburger && mobileNav && closeBtn && mobileNavLinks) {
       const openNav = () => {
         mobileNav.classList.add('is-open');
+        hamburger.classList.add('is-open');
         document.body.classList.add('mobile-nav-open');
       };
 
       const closeNav = () => {
         mobileNav.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
         document.body.classList.remove('mobile-nav-open');
       };
 

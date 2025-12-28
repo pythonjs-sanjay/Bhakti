@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -20,15 +20,33 @@ export default function Footer() {
           <div className="footer-socials-new">
             <h4>हमसे जुड़ें</h4>
             <div className="social-icons">
-              <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-              <a href="#" aria-label="Youtube"><i className="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Facebook">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Youtube">
+                <i className="fab fa-youtube"></i>
+              </a>
             </div>
           </div>
         </div>
         <div className="footer-bottom">
           <p>&copy; 2025 वैदिक परंपरा. सर्वाधिकार सुरक्षित।</p>
-          <a href="#" className="back-to-top">ऊपर जाएँ <i className="fa-solid fa-arrow-up"></i></a>
+          <p>
+            Made with ❤️ by{" "}
+            <a
+              href="https://pythonjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              PythonJs.org
+            </a>
+          </p>
+          <a href="#" className="back-to-top">
+            ऊपर जाएँ <i className="fa-solid fa-arrow-up"></i>
+          </a>
         </div>
       </div>
     </footer>

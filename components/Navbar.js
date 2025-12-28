@@ -33,6 +33,12 @@ export default function Navbar() {
         <Link href="/about">हमारे बारे में</Link>
         <Link href="/contact">संपर्क</Link>
         <Link href="/blog">ब्लॉग</Link>
+
+        <div className="mobile-socials">
+          <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Youtube"><i className="fab fa-youtube"></i></a>
+        </div>
       </div>
     </>
   );
