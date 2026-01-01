@@ -1,24 +1,62 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 export default function Navbar() {
   const router = useRouter();
   const currentPath = router.pathname;
+  const { t } = useTranslation("common");
 
   return (
     <>
       <div className="navbar">
         <div className="container nav-content">
           <div className="logo">
-            <Link href="/">🕉️ वैदिक परंपरा</Link>
+            <Link href="/">{t("site_title")}</Link>
           </div>
           <div className="nav-links">
-            <Link href="/" className={currentPath === '/' ? 'active' : ''}>होम</Link>
-            <Link href="/#services" className={currentPath === '/#services' ? 'active' : ''}>सेवाएँ</Link>
-            <Link href="/about" className={currentPath === '/about' ? 'active' : ''}>हमारे बारे में</Link>
-            <Link href="/contact" className={currentPath === '/contact' ? 'active' : ''}>संपर्क</Link>
-            <Link href="/blog" className={currentPath.startsWith('/blog') ? 'active' : ''}>ब्लॉग</Link>
+            <Link href="/" className={currentPath === "/" ? "active" : ""}>
+              {t("nav_home")}
+            </Link>
+            <Link
+              href="/#services"
+              className={currentPath === "/#services" ? "active" : ""}
+            >
+              {t("nav_services")}
+            </Link>
+            <Link
+              href="/about"
+              className={currentPath === "/about" ? "active" : ""}
+            >
+              {t("nav_about")}
+            </Link>
+            <Link
+              href="/contact"
+              className={currentPath === "/contact" ? "active" : ""}
+            >
+              {t("nav_contact")}
+            </Link>
+            <Link
+              href="/blog"
+              className={currentPath.startsWith("/blog") ? "active" : ""}
+            >
+              {t("nav_blog")}
+            </Link>
           </div>
+
+          <div className="lang-switcher">
+            {router.locales.map((locale) => (
+              <Link
+                key={locale}
+                href={router.asPath}
+                locale={locale}
+                className={router.locale === locale ? "active" : ""}
+              >
+                {locale === "hi" ? "हिंदी" : "EN"}
+              </Link>
+            ))}
+          </div>
+
           <button className="hamburger-menu" aria-label="Open navigation menu">
             <span className="hamburger-line"></span>
             <span className="hamburger-line"></span>
@@ -27,18 +65,36 @@ export default function Navbar() {
         </div>
       </div>
       <div className="mobile-nav">
-        <button className="mobile-nav-close" aria-label="Close navigation menu">&times;</button>
-        <Link href="/">होम</Link>
-        <Link href="/#services">सेवाएँ</Link>
-        <Link href="/about">हमारे बारे में</Link>
-        <Link href="/contact">संपर्क</Link>
-        <Link href="/blog">ब्लॉग</Link>
+        <Link href="/">{t("nav_home")}</Link>
+        <Link href="/#services">{t("nav_services")}</Link>
+        <Link href="/about">{t("nav_about")}</Link>
+        <Link href="/contact">{t("nav_contact")}</Link>
+        <Link href="/blog">{t("nav_blog")}</Link>
 
-        <div className="mobile-socials">
-          <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Youtube"><i className="fab fa-youtube"></i></a>
-        </div>
+        {/* <div className="mobile-socials">
+          <a href="#" aria-label="Facebook">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="Youtube">
+            <i className="fab fa-youtube"></i>
+          </a>
+        </div> */}
+
+        {/* <div className="lang-switcher mobile-lang-switcher">
+          {router.locales.map((locale) => (
+            <Link
+              key={locale}
+              href={router.asPath}
+              locale={locale}
+              className={router.locale === locale ? 'active' : ''}
+            >
+              {locale === 'hi' ? 'हिंदी' : 'EN'}
+            </Link>
+          ))}
+        </div> */}
       </div>
     </>
   );

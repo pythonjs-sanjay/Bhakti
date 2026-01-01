@@ -1,16 +1,30 @@
 import Head from "next/head";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default function ContactPage() {
+  const { t } = useTranslation("common");
+
   return (
     <>
       <Head>
-        <title>संपर्क करें - वैदिक परंपरा</title>
+        <title>
+          {t("contact_page_title")} - {t("site_title")}
+        </title>
       </Head>
 
       <div className="page-header">
         <div className="container">
-          <h1>संपर्क करें</h1>
-          <p>पूजा, अनुष्ठान या परामर्श के लिए आज ही हमसे जुड़ें।</p>
+          <h1>{t("contact_page_title")}</h1>
+          <p>{t("contact_page_subtitle")}</p>
         </div>
       </div>
 
@@ -18,57 +32,54 @@ export default function ContactPage() {
         <div className="container">
           <div className="contact-grid">
             <div className="contact-info">
-              <h3>संपर्क विवरण</h3>
-              <p>
-                नीचे दिए गए विवरण के माध्यम से आप हमसे सीधे संपर्क कर सकते हैं।
-                हम आपकी सेवा में सदैव तत्पर हैं।
-              </p>
+              <h3>{t("contact_details_title")}</h3>
+              <p>{t("contact_details_desc")}</p>
               <div className="info-item">
                 <i className="fa-solid fa-phone"></i>
                 <div>
-                  <h4>फ़ोन</h4>
+                  <h4>{t("contact_phone")}</h4>
                   <span>+91 95291 83899</span>
                 </div>
               </div>
               <div className="info-item">
                 <i className="fa-solid fa-envelope"></i>
                 <div>
-                  <h4>ईमेल</h4>
+                  <h4>{t("contact_email")}</h4>
                   <span>@email.com</span>
                 </div>
               </div>
               <div className="info-item">
                 <i className="fa-solid fa-map-marker-alt"></i>
                 <div>
-                  <h4>पता</h4>
-                  <span>अयोध्या, उत्तर प्रदेश, भारत</span>
+                  <h4>{t("contact_address")}</h4>
+                  <span>Bikaner, Rajasthan</span>
                 </div>
               </div>
             </div>
             <div className="contact-form-container">
-              <h3>हमें एक संदेश भेजें</h3>
+              <h3>{t("contact_form_title")}</h3>
               <form className="contact-form" action="#" method="POST">
                 <div className="form-group">
-                  <label htmlFor="name">आपका नाम</label>
+                  <label htmlFor="name">{t("form_name")}</label>
                   <input type="text" id="name" name="name" required />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">आपका ईमेल</label>
+                  <label htmlFor="email">{t("form_email")}</label>
                   <input type="email" id="email" name="email" required />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="service">सेवा का प्रकार</label>
+                  <label htmlFor="service">{t("form_service_type")}</label>
                   <select id="service" name="service">
-                    <option>--सेवा चुनें--</option>
-                    <option>विवाह संस्कार</option>
-                    <option>विशेष पूजा</option>
-                    <option>ज्योतिष परामर्श</option>
-                    <option>गृह प्रवेश</option>
-                    <option>अन्य</option>
+                    <option>{t("service_option_default")}</option>
+                    <option>{t("service_option_marriage")}</option>
+                    <option>{t("service_option_puja")}</option>
+                    <option>{t("service_option_astrology")}</option>
+                    <option>{t("service_option_griha_pravesh")}</option>
+                    <option>{t("service_option_other")}</option>
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message">आपका संदेश</label>
+                  <label htmlFor="message">{t("form_message")}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -77,7 +88,7 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
                 <button type="submit" className="cta-button">
-                  संदेश भेजें
+                  {t("form_submit_button")}
                 </button>
               </form>
             </div>

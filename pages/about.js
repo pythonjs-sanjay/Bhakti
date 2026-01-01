@@ -1,38 +1,52 @@
-import Head from 'next/head';
+import Head from "next/head";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default function AboutPage() {
+  const { t } = useTranslation("common");
+
   return (
     <>
       <Head>
-        <title>हमारे बारे में - वैदिक परंपरा</title>
+        <title>
+          {t("about_page_title")} - {t("site_title")}
+        </title>
       </Head>
 
       <div className="page-header">
         <div className="container">
-            <h1>हमारे बारे में</h1>
+          <h1>{t("about_page_title")}</h1>
         </div>
       </div>
 
       <div className="about-us-section page-section">
-          <div className="container">
-              <div className="about-us-content">
-                  <div className="about-us-image">
-                      <img src="/images/freepik.png" alt="आचार्य राम किशन जी जोशी" />
-                  </div>
-                  <div className="about-us-text">
-                      <h2>आचार्य राम किशन जी जोशी</h2>
-                      <p className="tagline">पवित्रता, विश्वास, और वैदिक परंपरा का संगम।</p>
-                      <p>आचार्य राम किशन जी जोशी एक प्रतिष्ठित और ज्ञानी विद्वान हैं, जिन्हें वैदिक अनुष्ठानों और ज्योतिष का गहरा ज्ञान है। उन्होंने अपना जीवन सनातन धर्म के प्रचार और लोगों को उनकी आध्यात्मिक यात्रा में मार्गदर्शन करने के लिए समर्पित कर दिया है।</p>
-                      
-                      <div className="mission-statement">
-                          <h4>हमारा लक्ष्य</h4>
-                          <p>हमारा लक्ष्य हर अनुष्ठान को पूर्ण शुद्धता, भक्ति और विधि-विधान के साथ संपन्न करना है, ताकि यजमान को उसका सर्वोत्तम फल और आध्यात्मिक शांति प्राप्त हो सके।</p>
-                      </div>
+        <div className="container">
+          <div className="about-us-content">
+            <div className="about-us-image">
+              <img src="/images/my_img.jpeg" alt={t("about_acharya_name")} />
+            </div>
+            <div className="about-us-text">
+              <h2>{t("about_acharya_name")}</h2>
+              <p className="tagline">{t("about_acharya_tagline")}</p>
+              <p>{t("about_acharya_desc_1")}</p>
 
-                      <p>भारत के एक सम्मानित गुरुकुल से शिक्षित, शास्त्री जी ने सभी प्रमुख वेदों, पुराणों और उपनिषदों का गहन अध्ययन किया है। वह विवाह संस्कार, गृह प्रवेश, विशेष पूजा-पाठ, और ज्योतिष परामर्श सहित सभी प्रकार की धार्मिक सेवाओं में विशेषज्ञ हैं।</p>
-                  </div>
+              <div className="mission-statement">
+                <h4>{t("about_mission_title")}</h4>
+                <p>{t("about_mission_desc")}</p>
               </div>
+
+              <p>{t("about_acharya_desc_2")}</p>
+            </div>
           </div>
+        </div>
       </div>
     </>
   );

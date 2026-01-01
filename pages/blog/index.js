@@ -1,25 +1,30 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { getSortedPostsData } from '../../lib/posts';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const allPostsData = getSortedPostsData();
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['common'])),
       allPostsData,
     },
   };
 }
 
 export default function BlogIndex({ allPostsData }) {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <Head>
-        <title>ब्लॉग - वैदिक परंपरा</title>
+        <title>{t('blog_page_title')} - {t('site_title')}</title>
       </Head>
       <div className="page-header">
         <div className="container">
-            <h1>ब्लॉग</h1>
+            <h1>{t('blog_page_title')}</h1>
         </div>
       </div>
       <div className="blog-list-section">
@@ -30,7 +35,7 @@ export default function BlogIndex({ allPostsData }) {
                       <h2><Link href={`/blog/${slug}`}>{title}</Link></h2>
                       <small style={{display: 'block', marginBottom: '10px', color: '#777'}}>{date}</small>
                       <p>{excerpt}</p>
-                      <Link href={`/blog/${slug}`} className="read-more">पूरा पढ़ें &rarr;</Link>
+                      <Link href={`/blog/${slug}`} className="read-more" dangerouslySetInnerHTML={{ __html: t('read_more') }} />
                   </div>
               </div>
             ))}

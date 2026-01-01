@@ -8,39 +8,61 @@ export default function Layout({ children }) {
     // Mobile Nav
     const hamburger = document.querySelector('.hamburger-menu');
     const mobileNav = document.querySelector('.mobile-nav');
-    const closeBtn = document.querySelector('.mobile-nav-close');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
-    if (hamburger && mobileNav && closeBtn && mobileNavLinks) {
-      const openNav = () => {
-        mobileNav.classList.add('is-open');
-        hamburger.classList.add('is-open');
-        document.body.classList.add('mobile-nav-open');
-      };
+    const toggleNav = () => {
+      hamburger.classList.toggle('is-open');
+      mobileNav.classList.toggle('is-open');
+      document.body.classList.toggle('mobile-nav-open');
+    };
 
-      const closeNav = () => {
-        mobileNav.classList.remove('is-open');
-        hamburger.classList.remove('is-open');
-        document.body.classList.remove('mobile-nav-open');
-      };
+    const closeNav = () => {
+      hamburger.classList.remove('is-open');
+      mobileNav.classList.remove('is-open');
+      document.body.classList.remove('mobile-nav-open');
+    };
 
-      hamburger.addEventListener('click', openNav);
-      closeBtn.addEventListener('click', closeNav);
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', toggleNav);
       mobileNavLinks.forEach(link => {
         link.addEventListener('click', closeNav);
       });
-
-      // Cleanup function to remove event listeners
-      return () => {
-        hamburger.removeEventListener('click', openNav);
-        closeBtn.removeEventListener('click', closeNav);
-        mobileNavLinks.forEach(link => {
-          link.removeEventListener('click', closeNav);
-        });
-      };
     }
-  }, []);
 
+    // Scroll Animation
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    let observer;
+    if ("IntersectionObserver" in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      animatedElements.forEach(element => observer.observe(element));
+    } else {
+      animatedElements.forEach(element => element.classList.add("is-visible"));
+    }
+
+    // Correct Cleanup function
+    return () => {
+      if (hamburger) {
+        hamburger.removeEventListener('click', toggleNav);
+      }
+      mobileNavLinks.forEach(link => {
+        link.removeEventListener('click', closeNav);
+      });
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, [children]); // Rerun on page change
+  
   return (
     <>
       <Head>

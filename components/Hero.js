@@ -1,20 +1,19 @@
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 export default function Hero() {
+  const { t } = useTranslation('common');
+
   return (
     <div className="hero-section" id="home">
       <div className="container hero-container">
         <div className="hero-text">
           <h1 id="animated-heading">
-            पवित्रता, विश्वास, और वैदिक परंपरा का संगम
+            {t('hero_title')}
           </h1>
-          <p>
-            भारत के प्रतिष्ठित आचार्य **राम किशन जी जोशी** द्वारा अपने सभी
-            धार्मिक अनुष्ठानों को शुद्धता और संपूर्ण विधि-विधान के साथ संपन्न
-            कराएं।
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: t('hero_subtitle') }} />
           <Link href="/contact" className="cta-button">
-            परामर्श/पूजा बुक करें
+            {t('hero_cta')}
           </Link>
         </div>
         <div className="hero-image">

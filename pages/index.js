@@ -1,40 +1,27 @@
 import { useEffect } from 'react';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
 
 export default function Home() {
-  
-  useEffect(() => {
-    // Scroll Animation
-    const animatedElements = document.querySelectorAll('.scroll-animate');
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      animatedElements.forEach((element) => {
-        observer.observe(element);
-      });
-    } else {
-      animatedElements.forEach((element) => {
-        element.classList.add("is-visible");
-      });
-    }
+  const { t } = useTranslation('common');
 
-    // Text Carousel for Hero Heading
+  useEffect(() => {
     const headingElement = document.getElementById("animated-heading");
     if (headingElement) {
       const headings = [
-        "पवित्रता, विश्वास, और वैदिक परंपरा का संगम।",
-        "सभी धार्मिक अनुष्ठानों के लिए विशेषज्ञ।",
-        "ज्योतिष और वैदिक समाधान।",
+        t('hero_carousel_1'),
+        t('hero_carousel_2'),
+        t('hero_carousel_3'),
       ];
       let currentIndex = 0;
 
@@ -51,9 +38,9 @@ export default function Home() {
         }, 500);
       }, 3000);
       
-      return () => clearInterval(intervalId); // Cleanup on component unmount
+      return () => clearInterval(intervalId);
     }
-  }, []);
+  }, [t]);
 
   return (
     <>
