@@ -286,8 +286,10 @@ a {
 .hero-image img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 0;
   transition: all 0.4s ease-in-out;
+  background: transparent;
+  mix-blend-mode: multiply;
 }
 .hero-image img:hover {
   transform: scale(1.03);
@@ -328,6 +330,93 @@ a {
 .service-card p {
   font-size: 0.95rem;
   color: #555;
+}
+.service-subtitle {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.service-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0e6d9;
+  font-size: 0.95rem;
+  color: #555;
+}
+.service-list li:last-child {
+  border-bottom: none;
+}
+.service-list li::before {
+  content: "॥";
+  color: var(--saffron-accent);
+  margin-right: 8px;
+  font-weight: bold;
+}
+.service-name {
+  color: var(--text-dark);
+}
+.cta-card {
+  border-left-color: var(--saffron-accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.cta-card i {
+  color: var(--primary-gold);
+}
+
+/* Special Devotional Card */
+.special-card {
+  background: linear-gradient(135deg, #fffaf0 0%, #fff8e7 100%);
+  border-left: 5px solid var(--saffron-accent);
+}
+.special-services {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+.special-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.special-item:hover {
+  transform: translateX(5px);
+}
+.special-item i {
+  font-size: 1.2rem;
+  color: var(--saffron-accent);
+  width: 30px;
+}
+.special-item span {
+  font-weight: 600;
+  color: var(--text-dark);
+  flex: 1;
+}
+.special-item small {
+  font-size: 0.8rem;
+  color: #888;
+}
+.special-note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--primary-gold);
+  font-style: italic;
+  text-align: center;
 }
 
 /* About Page */

@@ -17,7 +17,7 @@ export default function Hero() {
           </Link>
         </div>
         <div className="hero-image">
-          <img src="/images/freepik.png" alt="श्री गणेश" />
+          <img src="/images/ganesha-puja.png" alt="श्री गणेश" />
           <div className="flower-shower">
             <span className="flower">❁</span>
             <span className="flower">❁</span>
