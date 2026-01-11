@@ -55,9 +55,6 @@ export default function Footer() {
               PythonJs.org
             </a>
           </p>
-          <a href="#" className="back-to-top">
-            {t("footer_back_to_top")} <i className="fa-solid fa-arrow-up"></i>
-          </a>
         </div>
       </div>
     </footer>

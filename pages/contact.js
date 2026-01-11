@@ -45,14 +45,14 @@ export default function ContactPage() {
                 <i className="fa-solid fa-envelope"></i>
                 <div>
                   <h4>{t("contact_email")}</h4>
-                  <span>@email.com</span>
+                  <span>panditramkishanjoshi@gmail.com</span>
                 </div>
               </div>
               <div className="info-item">
                 <i className="fa-solid fa-map-marker-alt"></i>
                 <div>
                   <h4>{t("contact_address")}</h4>
-                  <span>Bikaner, Rajasthan</span>
+                  <span>Surat, Gujrat</span>
                 </div>
               </div>
             </div>

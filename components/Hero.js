@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
 export default function Hero() {
@@ -17,7 +18,14 @@ export default function Hero() {
           </Link>
         </div>
         <div className="hero-image">
-          <img src="/images/ganesha-puja.png" alt="श्री गणेश" />
+          <Image 
+            src="/images/ganesh.png" 
+            alt="श्री गणेश" 
+            width={600} 
+            height={600}
+            priority
+            style={{ width: '100%', height: 'auto' }}
+          />
           <div className="flower-shower">
             <span className="flower">❁</span>
             <span className="flower">❁</span>

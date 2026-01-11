@@ -59,5 +59,112 @@
   "service_option_griha_pravesh": "House Warming",
   "service_option_other": "Other",
   "blog_page_title": "Blog",
-  "read_more": "Read More &rarr;"
+  "read_more": "Read More &rarr;",
+  "service_categories": [
+    {
+      "title": "Festival & Seasonal Pujas",
+      "subtitle": "त्योहार एवं पर्व पूजा",
+      "icon": "fa-solid fa-calendar-days",
+      "services": [
+        { "name": "Ganesh Puja" },
+        { "name": "Lakshmi Puja / Diwali Special" },
+        { "name": "Navratri / Durga Puja" },
+        { "name": "Saraswati Puja" },
+        { "name": "Shivratri Puja" }
+      ]
+    },
+    {
+      "title": "Havan & Yagna",
+      "subtitle": "हवन एवं यज्ञ",
+      "icon": "fa-solid fa-fire",
+      "services": [
+        { "name": "Navgrah Yagna" },
+        { "name": "Rudrabhishek Havan" },
+        { "name": "Gayatri Anusthan" },
+        { "name": "Mahamrityunjay Jap" },
+        { "name": "Vastu Shanti Yagya" }
+      ]
+    },
+    {
+      "title": "Corporate & Business Services",
+      "subtitle": "व्यावसायिक सेवाएं",
+      "icon": "fa-solid fa-building",
+      "services": [
+        { "name": "Office Opening Puja" },
+        { "name": "Business / Startup Puja" },
+        { "name": "Factory / Unit Puja" },
+        { "name": "Griha Pravesh / Office Puja" }
+      ]
+    },
+    {
+      "title": "Path & Satsang Events",
+      "subtitle": "पाठ एवं सत्संग",
+      "icon": "fa-solid fa-book-open",
+      "services": [
+        { "name": "Akhand Ramayan Path (24 hrs)" },
+        { "name": "Satyanarayan Katha" },
+        { "name": "Ganpati Path" },
+        { "name": "Mahalaxmi Path" },
+        { "name": "All Stotra Path" }
+      ]
+    },
+    {
+      "title": "Vrat & Personal Observances",
+      "subtitle": "व्रत उद्यापन",
+      "icon": "fa-solid fa-moon",
+      "services": [
+        { "name": "Ekadashi Udhyapan" },
+        { "name": "Karva Chauth Udhyapan" },
+        { "name": "Purnima Udhyapan" },
+        { "name": "Anant Chaturdashi Udhyapan" },
+        { "name": "Tithi-specific Vrat Udhyapan" }
+      ]
+    },
+    {
+      "title": "Astrology-Linked Rituals",
+      "subtitle": "ज्योतिष दोष निवारण",
+      "icon": "fa-solid fa-star",
+      "services": [
+        { "name": "Mangal Dosh Nivaran Puja" },
+        { "name": "Rahu / Ketu Shanti Puja" },
+        { "name": "Nakshatra Dosha Puja" },
+        { "name": "Kundli Analysis" }
+      ]
+    },
+    {
+      "title": "Wedding & Life Events",
+      "subtitle": "विवाह एवं संस्कार",
+      "icon": "fa-solid fa-ring",
+      "services": [
+        { "name": "Engagement Puja" },
+        { "name": "Wedding Puja" },
+        { "name": "Namkaran Sanskar" },
+        { "name": "Janeu Sanskar" },
+        { "name": "Griha Pravesh" }
+      ]
+    },
+    {
+      "title": "Ancestral & Pitra Rituals",
+      "subtitle": "पितृ कर्म",
+      "icon": "fa-solid fa-hands-praying",
+      "services": [
+        { "name": "Shraddh Karma" },
+        { "name": "Tarpan" },
+        { "name": "Pitra Dosh Nivaran" }
+      ]
+    },
+    {
+      "title": "Devotional Music Events",
+      "subtitle": "भजन संध्या एवं कीर्तन",
+      "icon": "fa-solid fa-music",
+      "special_card": true,
+      "items": [
+        { "name": "Bhajan Sandhya", "sub": "भजन संध्या" },
+        { "name": "Shyam Kirtan", "sub": "श्याम कीर्तन" },
+        { "name": "Mangal Path", "sub": "मंगल पाठ" },
+        { "name": "Sunderkand Path", "sub": "सुंदरकांड पाठ" }
+      ],
+      "note": "Experience spiritual peace and devotion"
+    }
+  ]
 }

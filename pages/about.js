@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -31,7 +32,13 @@ export default function AboutPage() {
         <div className="container">
           <div className="about-us-content">
             <div className="about-us-image">
-              <img src="/images/my_img.jpeg" alt={t("about_acharya_name")} />
+              <Image 
+                src="/images/my_img.jpeg" 
+                alt={t("about_acharya_name")} 
+                width={500} 
+                height={600}
+                style={{ width: '100%', height: 'auto' }}
+              />
             </div>
             <div className="about-us-text">
               <h2>{t("about_acharya_name")}</h2>

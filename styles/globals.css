@@ -136,7 +136,6 @@ a {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-
 /* New Mobile Nav Styles */
 .mobile-nav {
   position: fixed;
@@ -145,7 +144,7 @@ a {
   width: 100%;
   height: 100%;
   background: #fdfdfd;
-  z-index: 999; 
+  z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -191,14 +190,14 @@ a {
 }
 
 .mobile-lang-switcher {
-    position: absolute;
-    bottom: 50px;
-    left: 40px;
-    display: flex;
-    gap: 20px;
-    font-size: 1.1rem;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
 }
 
 /* ------------------------------------
@@ -391,7 +390,7 @@ a {
   padding: 12px 15px;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 .special-item:hover {
@@ -879,19 +878,21 @@ a {
   border-bottom: 1px solid #574f48; /* Added line below */
   padding-top: 20px;
   padding-bottom: 20px; /* Added padding below */
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between; /* Changed to space-between as requested */
   align-items: center;
   gap: 20px;
   font-size: 0.9rem;
+  text-align: left;
 }
 
 .footer-bottom p {
   margin: 0;
+  /* text-align removed from here to inherit from parent or allow default */
 }
 
 .footer-bottom p:nth-child(2) {
-  justify-self: center;
+  /* Removed justify-self: center */
 }
 
 .footer-bottom .back-to-top {
@@ -957,6 +958,9 @@ a {
   }
 }
 @media (max-width: 768px) {
+  .logo {
+    font-size: 1rem;
+  }
   .nav-links {
     display: none;
   }
@@ -978,6 +982,7 @@ a {
   .footer-bottom {
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Center content vertically */
     gap: 15px;
     align-items: center;
     text-align: center;
@@ -997,5 +1002,107 @@ a {
   .sundarkand-text .shloka {
     font-size: 1.2rem;
     line-height: 2;
+  }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: pulse-whatsapp 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+}
+
+.whatsapp-float i {
+  margin-top: 2px; /* Fine-tune icon centering */
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes pulse-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(184, 134, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(184, 134, 11, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 25px;
+  }
+}
+
+/* Scroll To Top Button */
+.scroll-to-top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 120px; /* Increased gap */
+  right: 45px; /* Aligned center with WhatsApp button */
+  background-color: var(--primary-gold);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse-gold 2s infinite; /* Uses gold color pulse */
+}
+
+.scroll-to-top:hover {
+  background-color: var(--saffron-accent);
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 90px; /* Adjusted mobile gap */
+    right: 25px;
+    font-size: 18px;
   }
 }

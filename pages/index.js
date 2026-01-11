@@ -3,16 +3,22 @@ import Hero from '../components/Hero';
 import Services from '../components/Services';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import hi_translations from '../public/locales/hi/common.json';
+import en_translations from '../public/locales/en/common.json';
 
 export async function getStaticProps({ locale }) {
+  const translations = locale === 'hi' ? hi_translations : en_translations;
+  const serviceData = translations.service_categories;
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
+      serviceData,
     },
   };
 }
 
-export default function Home() {
+export default function Home({ serviceData }) {
   const { t } = useTranslation('common');
 
   useEffect(() => {
@@ -45,7 +51,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Services />
+      <Services serviceData={serviceData} />
     </>
   );
 }

@@ -59,5 +59,112 @@
   "service_option_griha_pravesh": "गृह प्रवेश",
   "service_option_other": "अन्य",
   "blog_page_title": "ब्लॉग",
-  "read_more": "पूरा पढ़ें &rarr;"
+  "read_more": "पूरा पढ़ें &rarr;",
+  "service_categories": [
+    {
+      "title": "त्योहार एवं पर्व पूजा",
+      "subtitle": "Festival & Seasonal Pujas",
+      "icon": "fa-solid fa-calendar-days",
+      "services": [
+        { "name": "गणेश पूजा" },
+        { "name": "लक्ष्मी पूजा / दीवाली पूजा" },
+        { "name": "नवरात्रि पूजा / दुर्गा पूजा" },
+        { "name": "सरस्वती पूजा" },
+        { "name": "शिवरात्रि पूजा" }
+      ]
+    },
+    {
+      "title": "हवन एवं यज्ञ",
+      "subtitle": "Havan & Yagna",
+      "icon": "fa-solid fa-fire",
+      "services": [
+        { "name": "नवग्रह यज्ञ / शांति हवन" },
+        { "name": "रुद्राभिषेक सहित यज्ञ" },
+        { "name": "गायत्री अनुष्ठान" },
+        { "name": "महामृत्युंजय जप" },
+        { "name": "वास्तु शांति यज्ञ" }
+      ]
+    },
+    {
+      "title": "व्यावसायिक सेवाएं",
+      "subtitle": "Corporate & Business Services",
+      "icon": "fa-solid fa-building",
+      "services": [
+        { "name": "दुकान / कार्यालय उद्घाटन पूजा" },
+        { "name": "व्यवसाय शुभारंभ पूजा" },
+        { "name": "फैक्ट्री पूजा" },
+        { "name": "गृह प्रवेश / ऑफिस पूजा" }
+      ]
+    },
+    {
+      "title": "पाठ एवं सत्संग",
+      "subtitle": "Path & Satsang Events",
+      "icon": "fa-solid fa-book-open",
+      "services": [
+        { "name": "अखंड रामायण पाठ" },
+        { "name": "सत्यनारायण कथा" },
+        { "name": "गणपति पाठ" },
+        { "name": "महालक्ष्मी पाठ" },
+        { "name": "सभी स्तोत्र पाठ" }
+      ]
+    },
+    {
+      "title": "व्रत उद्यापन",
+      "subtitle": "Vrat & Personal Observances",
+      "icon": "fa-solid fa-moon",
+      "services": [
+        { "name": "एकादशी उद्यापन" },
+        { "name": "करवा चौथ उद्यापन" },
+        { "name": "पूर्णिमा उद्यापन" },
+        { "name": "अनंत चतुर्दशी उद्यापन" },
+        { "name": "तिथि विशेष के व्रत उद्यापन" }
+      ]
+    },
+    {
+      "title": "ज्योतिष दोष निवारण",
+      "subtitle": "Astrology-Linked Rituals",
+      "icon": "fa-solid fa-star",
+      "services": [
+        { "name": "मांगलिक दोष निवारण" },
+        { "name": "राहु/केतु शांति पूजा" },
+        { "name": "नक्षत्र दोष पूजा" },
+        { "name": "कुंडली विश्लेषण" }
+      ]
+    },
+    {
+      "title": "विवाह एवं संस्कार",
+      "subtitle": "Wedding & Life Events",
+      "icon": "fa-solid fa-ring",
+      "services": [
+        { "name": "सगाई पूजा" },
+        { "name": "विवाह पूजा" },
+        { "name": "नामकरण संस्कार" },
+        { "name": "यज्ञोपवीत (जनेऊ)" },
+        { "name": "गृह प्रवेश" }
+      ]
+    },
+    {
+      "title": "पितृ कर्म",
+      "subtitle": "Ancestral & Pitra Rituals",
+      "icon": "fa-solid fa-hands-praying",
+      "services": [
+        { "name": "श्राद्ध कर्म" },
+        { "name": "तर्पण" },
+        { "name": "पितृ दोष निवारण" }
+      ]
+    },
+    {
+      "title": "भजन संध्या एवं कीर्तन",
+      "subtitle": "Devotional Music Events",
+      "icon": "fa-solid fa-music",
+      "special_card": true,
+      "items": [
+        { "name": "भजन संध्या", "sub": "Bhajan Sandhya" },
+        { "name": "श्याम कीर्तन", "sub": "Shyam Kirtan" },
+        { "name": "मंगल पाठ", "sub": "Mangal Path" },
+        { "name": "सुंदरकांड पाठ", "sub": "Sunderkand Path" }
+      ],
+      "note": "आध्यात्मिक शांति और भक्ति का अनुभव"
+    }
+  ]
 }
